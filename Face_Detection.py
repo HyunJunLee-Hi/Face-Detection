@@ -61,7 +61,12 @@ gender_list = ['Male', 'Female']
 
 cam = cv2.VideoCapture('sample.mp4')
 
-videoDetector(cam,cascade,age_net,gender_net,MODEL_MEAN_VALUES,age_list,gender_list )
+cap = cv2.VideoCapture(0)  # 노트북 웹캠을 카메라로 사용
+cap.set(3, 640)  # 너비
+cap.set(4, 480)  # 높이
+
+
+videoDetector(cap,cascade,age_net,gender_net,MODEL_MEAN_VALUES,age_list,gender_list )
 
 
 # Reference
